@@ -11,7 +11,6 @@
   html,body{height:100%;overflow:hidden;}
   body{font-family:'Golos Text',sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;}
 
-  /* TOPBAR */
   .topbar{display:flex;align-items:center;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0;height:48px;}
   .logo{font-family:'Unbounded',sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);padding:0 14px;border-right:1px solid var(--border);height:100%;display:flex;align-items:center;white-space:nowrap;}
   .tabs{display:flex;flex:1;overflow-x:auto;}
@@ -27,10 +26,8 @@
   .dot.err{background:#ff4d4d;animation:none;}
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 
-  /* LAYOUT */
   .body{display:flex;flex:1;overflow:hidden;}
 
-  /* SIDEBAR */
   .sidebar{width:270px;min-width:270px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;transition:transform .25s;}
   .search-box{margin:10px;position:relative;}
   .search-box input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:8px 10px 8px 32px;color:var(--text);font-family:'Golos Text',sans-serif;font-size:13px;outline:none;transition:border-color .2s;}
@@ -41,7 +38,6 @@
   .user-list::-webkit-scrollbar{width:3px;}
   .user-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
 
-  /* USER CARD */
   .user-card{border-radius:10px;padding:10px 12px;margin-bottom:3px;cursor:pointer;border:1px solid transparent;transition:all .15s;}
   .user-card:hover{background:var(--surface2);border-color:var(--border);}
   .user-card.active{background:var(--surface2);border-color:var(--accent);box-shadow:0 4px 16px rgba(108,99,255,.12);}
@@ -53,7 +49,6 @@
   .ucnt{background:var(--accent);color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;flex-shrink:0;}
   .ulast{font-size:11px;color:var(--muted);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
-  /* MAIN */
   .main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;}
   .back-btn{display:none;align-items:center;gap:8px;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);font-size:13px;color:var(--accent);cursor:pointer;flex-shrink:0;}
 
@@ -67,7 +62,6 @@
   .sv{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:600;color:var(--accent);}
   .sl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:1px;}
 
-  /* MESSAGES */
   .chat-messages{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:4px;}
   .chat-messages::-webkit-scrollbar{width:3px;}
   .chat-messages::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
@@ -95,7 +89,6 @@
   .t-service{background:rgba(108,99,255,.12);color:#6c63ff;border:1px solid rgba(108,99,255,.25);}
   .t-other{background:rgba(120,120,120,.1);color:#888;border:1px solid rgba(120,120,120,.2);}
 
-  /* USERS TAB (tab2) */
   .users-panel{flex:1;overflow-y:auto;padding:16px 20px;}
   .users-panel::-webkit-scrollbar{width:3px;}
   .users-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
@@ -113,15 +106,13 @@
   .upc-ml{font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;font-family:'Unbounded',sans-serif;margin-bottom:6px;}
   .upc-mt{font-size:13px;color:var(--text);line-height:1.6;}
 
-  /* EMPTY / LOADING */
   .empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);gap:14px;}
   .empty svg{opacity:.2;}
   .empty p{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:300;letter-spacing:.06em;}
-  .loading-s{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--muted);font-size:12px;}
+  .loading-s{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--muted);font-size:12px;padding:40px;}
   .spinner{width:26px;height:26px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;}
   @keyframes spin{to{transform:rotate(360deg);}}
 
-  /* MOBILE */
   @media(max-width:640px){
     .logo{display:none;}
     .sidebar{position:absolute;top:48px;left:0;bottom:0;z-index:100;width:100%;min-width:unset;box-shadow:4px 0 20px rgba(0,0,0,.5);}
@@ -137,7 +128,6 @@
 </style>
 </head>
 <body>
-
 <div class="topbar">
   <div class="logo">💬 Чаты</div>
   <div class="tabs">
@@ -149,7 +139,6 @@
     <span id="refreshLabel">...</span>
   </div>
 </div>
-
 <div class="body">
   <div class="sidebar" id="sidebar">
     <div class="search-box">
@@ -160,7 +149,6 @@
       <div class="loading-s"><div class="spinner"></div> Загрузка...</div>
     </div>
   </div>
-
   <div class="main" id="main">
     <div class="empty">
       <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -170,11 +158,14 @@
 </div>
 
 <script>
-const SOURCES=[
-  {url:"https://docs.google.com/spreadsheets/d/e/2PACX-1vTuk8xEPRYJ-vZTTL7Wotbgmk-B9tpJNkaikgtDA3WFAG4sPzi6StIs5HVH5dP6mGT_mtlh9QS4VyA8/pub?gid=0&single=true&output=csv"},
-  {url:"https://docs.google.com/spreadsheets/d/e/2PACX-1vTzaquYHpkjMCMq7jmL6yMhDWc3f-Lo2nM9837jctpnGWKHdF-DBI0D02XhH2QN57eEuzli2AaKd-Wz/pub?gid=0&single=true&output=csv"}
-];
-const PROXIES=[u=>`https://corsproxy.io/?${encodeURIComponent(u)}`,u=>`https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`];
+// ══════════════════════════════════════
+// Apps Script URLs (без CORS-проблем!)
+// ══════════════════════════════════════
+const URLS = {
+  messages:  "https://script.google.com/macros/s/AKfycbzAYsJMCtW3XykCJdWB6dRKft8GkhmUeFEqiWg5Xaj4iu8iPodBbWzb5EPDEdj4fleU/exec",
+  users:     "https://script.google.com/macros/s/AKfycbwO0wDmweTz3M3KpUsWwDBHsWEfHtahb9AfxgI310ljmUmBjgkxJye8tArbvrike5O_FQ/exec"
+};
+
 const COLORS=[["#6c63ff","#1e1a3d"],["#ff6584","#3d1a22"],["#43e97b","#1a3d28"],["#f7b731","#3d3010"],["#45aaf2","#1a2d3d"],["#fd9644","#3d2510"],["#a29bfe","#201d3d"],["#fd79a8","#3d1a2d"]];
 const colorMap={};let ci=0;
 const getColor=uid=>{if(!colorMap[uid])colorMap[uid]=COLORS[ci++%COLORS.length];return colorMap[uid];};
@@ -182,100 +173,90 @@ const getColor=uid=>{if(!colorMap[uid])colorMap[uid]=COLORS[ci++%COLORS.length];
 const TC={ask_booking:"t-booking",booking_start:"t-booking",ask_price:"t-price",ask_faq:"t-faq",ask_location:"t-faq",ask_contraindications:"t-contra",needs_human:"t-human",ask_services:"t-service",ask_indications:"t-service"};
 const TL={ask_indications:"показания",ask_price:"цена",ask_booking:"запись",booking_start:"запись",ask_faq:"FAQ",ask_location:"адрес",ask_contraindications:"⚠ противопоказания",needs_human:"🔴 оператор",ask_services:"услуги",other:"другое",browse_menu:"меню",view_service:"просмотр"};
 
-function parseLine(line){
-  const res=[];let cur='',inQ=false;
-  for(let i=0;i<line.length;i++){
-    const ch=line[i];
-    if(ch==='"'){if(inQ&&line[i+1]==='"'){cur+='"';i++;}else inQ=!inQ;}
-    else if(ch===','&&!inQ){res.push(cur.trim());cur='';}
-    else cur+=ch;
-  }
-  res.push(cur.trim());return res;
-}
-function parseCSV(text){
-  const lines=text.trim().split(/\r?\n/);if(lines.length<2)return[];
-  const headers=parseLine(lines[0]).map(h=>h.replace(/^"|"$/g,'').trim());
-  return lines.slice(1).filter(l=>l.trim()).map(l=>{
-    const vals=parseLine(l);const obj={};
-    headers.forEach((h,i)=>{obj[h]=(vals[i]||'').replace(/^"|"$/g,'');});
-    return obj;
-  });
-}
-
-// Parse datetime string → timestamp for sorting
 function parseTs(str){
   if(!str)return 0;
-  // formats: "04.03.2026 16:05:14" or "2026-03-05 14:54:22"
-  str=str.trim();
+  str=String(str).trim();
+  // "04.03.2026 16:05:14"
   if(str.match(/^\d{2}\.\d{2}\.\d{4}/)){
     const[date,time]=str.split(' ');
     const[d,m,y]=date.split('.');
     return new Date(`${y}-${m}-${d}T${time||'00:00:00'}`).getTime();
   }
+  // ISO: "2026-03-04T13:05:14.000Z" or "2026-03-05 14:54:22"
   return new Date(str).getTime()||0;
 }
 
-function normalizeMsg(r){
-  return{ts:r['ts']||r['date']||'',name:r['user_name']||r['name']||r['user']||'',uid:r['user_id']||r['uid']||'',role:(r['role']||'').toLowerCase(),text:r['text']||'',intent:r['intent']||r['tag']||'',reply:r['ответ бота']||r['bot_reply']||r['reply']||''};
+function formatTs(str){
+  if(!str)return'';
+  const ts=parseTs(str);
+  if(!ts)return str;
+  const d=new Date(ts);
+  return`${String(d.getDate()).padStart(2,'0')}.${String(d.getMonth()+1).padStart(2,'0')}.${d.getFullYear()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}:${String(d.getSeconds()).padStart(2,'0')}`;
+}
+
+function formatRelative(ts){
+  if(!ts)return'';
+  const diff=Date.now()-ts;
+  const m=Math.floor(diff/60000),h=Math.floor(diff/3600000),d=Math.floor(diff/86400000);
+  if(m<1)return'только что';
+  if(m<60)return`${m} мин назад`;
+  if(h<24)return`${h} ч назад`;
+  if(d<7)return`${d} д назад`;
+  return new Date(ts).toLocaleDateString('ru-RU');
 }
 
 function buildMsgUsers(rows){
   const map={};
   rows.forEach(r=>{
-    const uid=r.uid||r.name;if(!uid||!r.name)return;
-    if(!map[uid])map[uid]={uid,name:r.name,msgs:[],lastTs:0};
-    map[uid].msgs.push(r);
-    const t=parseTs(r.ts);
+    const uid=String(r['user_id']||r['uid']||r['user_name']||'');
+    const name=String(r['user_name']||r['name']||r['user']||'');
+    if(!uid||!name)return;
+    if(!map[uid])map[uid]={uid,name,msgs:[],lastTs:0};
+    const msg={
+      ts:   formatTs(String(r['ts']||r['date']||'')),
+      name, uid,
+      role: String(r['role']||'').toLowerCase(),
+      text: String(r['text']||''),
+      intent: String(r['intent']||r['tag']||''),
+      reply:  String(r['ответ бота']||r['bot_reply']||r['reply']||''),
+    };
+    map[uid].msgs.push(msg);
+    const t=parseTs(msg.ts);
     if(t>map[uid].lastTs)map[uid].lastTs=t;
   });
-  // Sort users by lastTs DESC (newest first)
   return Object.values(map).sort((a,b)=>b.lastTs-a.lastTs);
 }
 
-async function fetchCSV(rawUrl){
-  for(const mk of PROXIES){
-    try{
-      const res=await fetch(mk(rawUrl),{cache:'no-store'});
-      if(!res.ok)continue;
-      const text=await res.text();
-      if(text.includes(','))return text;
-    }catch(e){}
-  }
-  throw new Error('fail');
-}
+let msgUsers=[], userRows=[], activeTab=0, activeUid=null;
 
-let tableData=[[],[]];
-let activeTab=0,activeUid=null;
-
-async function fetchTable(idx){
-  try{
-    const text=await fetchCSV(SOURCES[idx].url);
-    const rows=parseCSV(text);
-    if(idx===0){
-      tableData[0]=buildMsgUsers(rows.map(normalizeMsg).filter(r=>r.uid&&r.name));
-    } else {
-      // Sort users table by last_seen DESC
-      tableData[1]=rows
-        .filter(r=>r['user_name']||r['name'])
-        .sort((a,b)=>parseTs(b['last_seen']||b['updated_at'])-parseTs(a['last_seen']||a['updated_at']));
-    }
-    document.getElementById('badge'+idx).textContent=tableData[idx].length;
-    return true;
-  }catch(e){document.getElementById('badge'+idx).textContent='!';return false;}
+async function fetchJSON(url){
+  const res=await fetch(url);
+  if(!res.ok)throw new Error('HTTP '+res.status);
+  return res.json();
 }
 
 async function loadAll(silent){
   if(!silent)document.getElementById('userList').innerHTML='<div class="loading-s"><div class="spinner"></div> Загрузка...</div>';
-  const ok=(await Promise.all([fetchTable(0),fetchTable(1)])).some(Boolean);
+  let ok=false;
+  try{
+    const[msgs, users]=await Promise.all([fetchJSON(URLS.messages), fetchJSON(URLS.users)]);
+    msgUsers=buildMsgUsers(msgs);
+    userRows=[...users].filter(r=>r['user_name']||r['name']).sort((a,b)=>parseTs(b['last_seen']||b['updated_at'])-parseTs(a['last_seen']||a['updated_at']));
+    document.getElementById('badge0').textContent=msgUsers.length;
+    document.getElementById('badge1').textContent=userRows.length;
+    ok=true;
+  }catch(e){
+    console.error(e);
+    document.getElementById('badge0').textContent='!';
+    document.getElementById('badge1').textContent='!';
+  }
   document.getElementById('statusDot').className='dot '+(ok?'live':'err');
   const now=new Date();
   document.getElementById('refreshLabel').textContent=`${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
   if(activeTab===0){
     renderList();
-    if(activeUid){const u=tableData[0].find(u=>u.uid===activeUid);if(u)renderChat(u,false);}
-  } else {
-    renderUsersTab();
-  }
+    if(activeUid){const u=msgUsers.find(u=>u.uid===activeUid);if(u)renderChat(u,false);}
+  } else renderUsersTab();
 }
 
 function switchTab(idx){
@@ -288,7 +269,7 @@ function switchTab(idx){
 
 function renderList(){
   const q=document.getElementById('searchInput').value.toLowerCase();
-  const users=(tableData[0]||[]).filter(u=>u.name.toLowerCase().includes(q));
+  const users=msgUsers.filter(u=>u.name.toLowerCase().includes(q));
   const el=document.getElementById('userList');el.innerHTML='';
   if(!users.length){el.innerHTML='<div style="text-align:center;color:var(--muted);padding:24px 10px;font-size:12px;">Нет данных</div>';return;}
   users.forEach(u=>{
@@ -296,37 +277,22 @@ function renderList(){
     const ini=u.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2)||'??';
     const cnt=u.msgs.filter(m=>m.role==='user'&&!m.text.startsWith('[')).length;
     const last=u.msgs.filter(m=>m.role==='user'&&!m.text.startsWith('[')).slice(-1)[0];
-    // Format last activity time
-    const lastTime=u.lastTs?formatRelative(u.lastTs):'';
     const d=document.createElement('div');
     d.className='user-card'+(u.uid===activeUid?' active':'');
     d.onclick=()=>openUser(u.uid);
     d.innerHTML=`<div class="uc-top">
       <div class="avatar" style="background:${bg};color:${ac}">${ini}</div>
-      <div class="uinfo"><div class="uname">${u.name}</div><div class="utime">${lastTime}</div></div>
+      <div class="uinfo"><div class="uname">${u.name}</div><div class="utime">${formatRelative(u.lastTs)}</div></div>
       <span class="ucnt">${cnt}</span></div>
       ${last?`<div class="ulast">${last.text}</div>`:''}`;
     el.appendChild(d);
   });
 }
 
-function formatRelative(ts){
-  const now=Date.now();const diff=now-ts;
-  const m=Math.floor(diff/60000);const h=Math.floor(diff/3600000);const d=Math.floor(diff/86400000);
-  if(m<1)return'только что';
-  if(m<60)return`${m} мин назад`;
-  if(h<24)return`${h} ч назад`;
-  if(d<7)return`${d} д назад`;
-  return new Date(ts).toLocaleDateString('ru-RU');
-}
-
 function openUser(uid){
   activeUid=uid;renderList();
-  const u=tableData[0].find(u=>u.uid===uid);
-  if(u){
-    renderChat(u,true);
-    if(window.innerWidth<=640)document.getElementById('sidebar').classList.add('hidden');
-  }
+  const u=msgUsers.find(u=>u.uid===uid);
+  if(u){renderChat(u,true);if(window.innerWidth<=640)document.getElementById('sidebar').classList.add('hidden');}
 }
 
 function showEmpty(){
@@ -378,17 +344,16 @@ function goBack(){
 }
 
 function renderUsersTab(){
-  const rows=tableData[1]||[];
   const main=document.getElementById('main');
-  if(!rows.length){main.innerHTML='<div class="loading-s"><div class="spinner"></div> Загрузка...</div>';return;}
+  if(!userRows.length){main.innerHTML='<div class="loading-s"><div class="spinner"></div> Загрузка...</div>';return;}
   main.innerHTML='<div class="users-panel" id="up"></div>';
   const panel=document.getElementById('up');
-  rows.forEach(r=>{
-    const name=r['user_name']||r['name']||'—';
-    const uid=r['user_id']||r['uid']||'';
-    const firstSeen=r['first_seen']||'—';
-    const lastSeen=r['last_seen']||r['updated_at']||'—';
-    const memory=r['memory_summary']||'—';
+  userRows.forEach(r=>{
+    const name=String(r['user_name']||r['name']||'—');
+    const uid=String(r['user_id']||r['uid']||'');
+    const firstSeen=String(r['first_seen']||'—');
+    const lastSeen=String(r['last_seen']||r['updated_at']||'—');
+    const memory=String(r['memory_summary']||'—');
     const[ac,bg]=getColor(uid||name);
     const ini=name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2)||'??';
     const lastTs=parseTs(lastSeen);
@@ -396,10 +361,7 @@ function renderUsersTab(){
     card.innerHTML=`
       <div class="upc-top">
         <div class="upc-av" style="background:${bg};color:${ac}">${ini}</div>
-        <div>
-          <div class="upc-name">${name}</div>
-          <div class="upc-id">ID: ${uid}${lastTs?` · ${formatRelative(lastTs)}`:''}</div>
-        </div>
+        <div><div class="upc-name">${name}</div><div class="upc-id">ID: ${uid}${lastTs?' · '+formatRelative(lastTs):''}</div></div>
       </div>
       <div class="upc-dates">
         <div class="upc-date"><div class="upc-dl">🟢 Первый визит</div><div class="upc-dv">${firstSeen}</div></div>
